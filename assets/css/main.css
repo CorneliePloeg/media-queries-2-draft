@@ -4,10 +4,168 @@
   box-sizing: border-box;
 }
 
+:root {
+  --mint: #effaf1;
+  --green: #335c67;
+  --blue: #006ed4;
+  --black: #231b1d;
+}
+
 html {
   font-family: 'Outfit', sans-serif;
+  background-color: var(--mint);
+  color: var(--black);
+  font-size: 18px;
 }
 
 p {
   line-height: 1.5;
 }
+
+img {
+  max-width: 100%;
+}
+
+.site-width {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--blue);
+  margin: 0 0.6rem;
+}
+
+nav a:first-child {
+  margin-left: 0;
+}
+
+.title {
+  margin: 8rem 0 1rem;
+  font-size: 8rem;
+}
+
+.subtitle {
+  margin: 1rem 0;
+  font-size: 2.5rem;
+}
+
+.title,
+.subtitle {
+  color: var(--green);
+  font-weight: 200;
+}
+
+.spaced-section {
+  margin: 8rem 0;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-rows: auto auto;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 3rem 1rem;
+}
+
+.grid-container .section-title {
+  grid-column: span 3;
+  color: var(--blue);
+}
+
+.grid-container article{
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.grid-container article h5 {
+  font-size: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+.grid-container article .price {
+  font-weight: 600;
+  color: var(--blue);
+}
+
+.btn {
+  text-decoration: none;
+  padding: 0.6rem 1rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  border: 2px solid var(--blue);
+  color: var(--blue);
+  font-size: 0.8rem;
+  margin-top: 1rem;
+  width: max-content;
+}
+
+.btn:hover {
+  background-color: var(--blue);
+  color: var(--mint);
+  cursor: pointer;
+}
+
+@media screen and (max-width: 767px) {
+  .grid-container{
+    grid-template-rows: auto 1fr 1fr 1fr;
+    grid-template-columns: auto;
+  }
+
+  .grid-container .section-title {
+    grid-column: auto;
+  }
+}
+
+@media screen and (orienation: landscape) and (max-width: 850px) {
+  .grid-container article p:not(.price) {
+    display: none;
+  }
+}
+
+@media print {
+  .print-hide {
+    display: none;
+  }
+
+  .grid-container {
+    gap: 1rem 1rem;
+  }
+
+  .spaced-section{
+    margin: 4rem 0;
+  }
+
+  .title {
+    margin: 2rem 0 1rem;
+    font-size: 3rem;
+  }
+
+  .subtitle {
+    margin: 0 0 2rem 0;
+  }
+}
+
+@media screen (max-width: 1366px) {
+  .title {
+    font-size: 6.5vw;
+  }
+
+  .subtitle {
+    font-size: 4vw;
+  }
+}
+
+
+@media screen and (max-width: 767px) {
+  .title {
+    font-size: 8vw;
+  }
+
+  .subtitle {
+    font-size: 5vw;
+  }
+}
+
